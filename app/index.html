@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0b18">
+  <meta name="color-scheme" content="dark">
+  <title>Just Chat</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">J</span>
+        <div>
+          <h1>Just Chat</h1>
+          <p id="status" class="status connecting"><span class="dot" aria-hidden="true"></span><span id="statusText">Connexion…</span></p>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="nameBtn" class="chip" type="button" title="Changer de nom">
+          <span id="myName">…</span><span aria-hidden="true">✎</span>
+        </button>
+        <button id="settingsBtn" class="icon-btn" type="button" title="Réglages" aria-label="Réglages">⚙</button>
+      </div>
+    </header>
+
+    <div id="presence" class="presence" aria-live="polite"></div>
+    <main id="messages" class="messages" aria-live="polite"></main>
+
+    <form id="composer" class="composer">
+      <textarea id="input" rows="1" maxlength="1000" placeholder="Écris un message…" aria-label="Ton message" autocomplete="off"></textarea>
+      <button id="send" type="submit" aria-label="Envoyer le message" disabled>➤</button>
+    </form>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="cardMark" aria-hidden="true">J</div>
+      <h2 id="modalTitle">Bienvenue sur Just Chat</h2>
+      <p class="hint">Pas d'inscription : choisis un nom. Tu pourras le changer à tout moment.</p>
+
+      <label for="nameInput">Ton nom</label>
+      <input id="nameInput" type="text" maxlength="24" placeholder="Ex. Léa" autocomplete="off" spellcheck="false">
+
+      <label for="serverInput">Adresse du serveur</label>
+      <input id="serverInput" type="text" inputmode="url" placeholder="http://192.168.1.10:8787" autocomplete="off" spellcheck="false">
+
+      <p id="modalError" class="error" role="alert"></p>
+      <button id="saveBtn" class="primary" type="button">Discuter</button>
+      <p class="fine">Le serveur doit tourner sur un PC accessible depuis le téléphone (même Wi-Fi).</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

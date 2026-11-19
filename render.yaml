@@ -1,0 +1,11 @@
+# Blueprint Render : uploader server.js, package.json, render.yaml
+# et le dossier app/ a la racine du depot GitHub.
+services:
+  - type: web
+    name: just-chat
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health

@@ -1,0 +1,13 @@
+{
+  "name": "just-chat-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serveur Just Chat - messages texte en memoire, temps reel SSE",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
